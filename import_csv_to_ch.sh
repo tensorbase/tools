@@ -11,7 +11,7 @@ else
     echo "query: ${query}"
     echo "port: ${port}"
 
-    ncpus=$(grep -c ^processor /proc/cpuinfo)
+    ncpus=$(grep ^cpu\\scores /proc/cpuinfo | uniq |  awk '{print $4}')
 
     #echo "to run: cat ${file} | parallel --dry-run -j ${ncpus} --pipe --block 100M clickhouse-client --query='\""${query}"\"'"
     SECONDS=0;
