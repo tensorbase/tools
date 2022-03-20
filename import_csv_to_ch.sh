@@ -1,6 +1,6 @@
 if [[ $# -eq 0 ]]; then
     echo 'usage:\n    . ./import_csv_to_ch.sh path_to_big_csv_file "sql_string_for_import_to_ch" port_of_clickhouse_server'
-    echo '\nexample:\n  . ./import_csv_to_ch.sh a.csv "SELECT trip_id,pickup_datetime from trips_lite_n10m" 9528'
+    echo '\nexample:\n  . ./import_csv_to_ch.sh a.csv "INSERT INTO trips_lite_n10m FORMAT CSV" 9528'
     echo '\nnote:\n     the bin (or link to) "clickhouse-client" is assumed on your shell path'
 else
     file=$1
